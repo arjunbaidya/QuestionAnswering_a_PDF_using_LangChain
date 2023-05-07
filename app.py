@@ -1,3 +1,5 @@
+# This version uses FAISS to store embeddings in-memory 
+
 from dotenv import load_dotenv
 import streamlit as st
 from PyPDF2 import PdfReader
