@@ -4,3 +4,4 @@ python-dotenv
 streamlit
 openai
 faiss-cpu
+pinecone-client
