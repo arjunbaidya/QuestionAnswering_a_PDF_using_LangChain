@@ -1,4 +1,6 @@
-# PDF Question-Answering app using LangChain, OpenAI and Streamlit
+# PDF Question-Answering app using LangChain, OpenAI, Pinecone and Streamlit
+
+Note: Two versions have been created. First one uses FAISS for storing embeddings in memory. Second one used Pinecone for storing embeddings.
 
 Upload your own PDF document to the app and ask questions to get answers from the PDF contents.
 
