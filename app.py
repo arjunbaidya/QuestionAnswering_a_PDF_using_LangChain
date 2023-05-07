@@ -18,10 +18,11 @@ def main():
     
     # Reading the file contents
     if pdf is not None:
+
         pdf_reader = PdfReader(pdf)
         text = ""
         for page in pdf_reader.pages:
-            text+=page.extract_text()           
+            text += page.extract_text()           
 
         # Splitting up the text into smaller chunks
         text_splitter = CharacterTextSplitter(
@@ -41,11 +42,10 @@ def main():
 
         # Take a question from the user
         query = st.text_input("Ask a question from the PDF contents:")
-        
-        
+                
         if query:
             # Get the documents that are similar to the question asked
-            similar_docs = vector_base.similarity_search(query)
+            similar_docs = vector_base.similarity_search(query, k=3)
             
             # Load the QA chain and run it to get the response, also track spending on OpenAI 
             llm = OpenAI()
