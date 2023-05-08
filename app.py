@@ -50,14 +50,14 @@ def main():
             similar_docs = vector_base.similarity_search(query, k=3)
             
             # Load the QA chain and run it to get the response, also track spending on OpenAI 
-            llm = OpenAI()
+            llm = OpenAI(temperature=0)
             chain = load_qa_chain(llm, chain_type="stuff")
             
             with get_openai_callback() as cb:
                 response = chain.run(input_documents=similar_docs, question=query)
                 print(cb)
 
-            # Post the answer on the app
+            # Post the answer to the user on the app
             st.write(response)
 
 if __name__=='__main__':
